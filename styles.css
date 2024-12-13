@@ -1,0 +1,364 @@
+body {
+    margin: 0;
+    background: antiquewhite;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.header-container {
+    position: relative;
+    padding: 0;
+    margin-bottom: 60px; /* Agregado para crear espacio debajo del header */
+}
+
+.header-container::before {
+    content: '';
+    position: absolute;
+    top: 0; /* Asegura que la imagen quede alineada con la parte superior */
+    left: 0;
+    width: 100%;
+    height: 400px;
+    background-image: url(./image/GhostBusters.jpg);
+    background-size: cover;
+    background-position: top center;
+    opacity: 0.8;
+    z-index: 1;
+}
+
+.titulo, #header {
+    position: relative;
+    z-index: 2; /* Coloca el contenido sobre la imagen de fondo */
+}
+
+.titulo {
+    font-family: "Lemonada", cursive;
+    font-weight: bold;
+    color: #29034d;
+    font-size: 15px;
+    display: flex;
+    justify-content: center; /* Asegura que el texto esté centrado */
+    text-align: center;
+    padding: 0px 0;
+    margin: 0;
+    z-index: 2;
+}
+
+.contenedor-nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 0px;
+    list-style: none;
+}
+
+.contenedor-nav li {
+    padding-top: 220px;
+    width: 100px;
+}
+
+.contenedor-nav li a {
+    text-decoration: none;
+    color: black;
+    font-size: 26px;
+    font-weight: bold;
+    border: 2px solid black;
+    border-radius: 50px;
+    padding: 4px;
+}
+
+.contenedor-nav li a:hover {
+    color: #500a92;
+    border: 2px solid #500a92;
+    border-radius: 50px;
+    padding: 4px;
+}
+
+.titulo-inicio {
+    font-family: "Lemonada", arial, helvetica;
+    font-weight: bold;
+    font-style: normal;
+    text-align: center;
+    font-size: 40px;
+}
+
+.texto {
+    font-family: "Lora", serif;
+    display: inline-block;
+    border: 3px solid;
+    border-radius: 10px;
+    border-color: #000000;
+    padding: 8px 20px;
+    font-size: x-large;
+}
+
+/*---------------------------------------------------------------------------------------------------------*/
+
+.titulo-destacados {
+    font-family: "Lemonada", arial, helvetica;
+    margin: 15px 30px;
+    font-size: xx-large;
+    z-index: 3; /* Asegura que el texto esté por encima de otros elementos */
+}
+
+.destacados {
+    height: 60vh;
+    display: flex;
+    margin-top: 80px; /* Espacio adicional entre el header y los destacados */
+    justify-content: center;
+    padding: 20px;
+}
+
+.container-carousel {
+    position: relative;
+    width: 500px;
+    height: 400px;
+    background-color: #e0e0e0;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.66);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.carruseles {
+    width: 600%; /* 100% * cantidad de imágenes */
+    height: 100%;
+    display: flex;
+    transition: transform 1.5s ease-in-out;
+}
+
+.slider-section {
+    width: calc(100% / 6); /* Ajusta a la cantidad de imágenes */
+    height: 100%;
+}
+
+.slider-section img {
+    margin: 0 135px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.btn-left, .btn-right {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    font-size: 2.5rem;
+    background-color: transparent;
+    border-radius: 50%;
+    padding: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #ffffff81;
+    transform: translate(0, -50%);
+    transition: .5s ease;
+    user-select: none;
+}
+
+.btn-left:hover, .btn-right:hover {
+    background-color: #333333d4;
+    color: #fff;
+}
+
+.btn-left {
+    left: 10px;
+}
+
+.btn-right {
+    right: 10px;
+}
+
+/*-----------------------------------------------------------------------------------------------------------*/
+
+.container {
+    padding-top: 56px;
+    padding-bottom: 13px;
+}
+
+/* Centrar el contenedor del formulario de búsqueda */
+#formularioBusqueda {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.peliculas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.peliculas article {
+    width: 200px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.peliculas img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.peliculas h2, .peliculas p {
+    text-align: center;
+}
+
+/*----------------------------------------------------------------------------------------------------------*/
+/*Formulario*/
+
+.centrado {
+    font-family: "Lemonada", cursive;
+    font-size: xx-large;
+}
+
+/* Estilos para los campos válidos e inválidos */
+input.valido, textarea.valido {
+    border: 2px solid green;
+    background-color: #e8f9e8;
+}
+
+input.invalido, textarea.invalido {
+    border: 2px solid red;
+    background-color: #f9e8e8;
+}
+
+/* Estilo de mensaje de error */
+.mensaje-error {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    padding: 5px 0;
+}
+
+/* Estilo del mensaje de éxito */
+.mensaje-exito {
+    color: green;
+    font-size: 17px;
+    text-align: center;
+    margin-top: 20px;
+    padding: 5px 0;
+}
+
+/* Estilo para los botones de acción en el formulario */
+.boton {
+    width: 100%;
+    padding: 12px;
+    background-color: #4bc19df0;
+    color: #500a92;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.boton:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Mejorar la visibilidad de los errores */
+.campo input:focus, .campo textarea:focus {
+    border: 2px solid #4CAF50;
+    outline: none;
+}
+
+/* Contenedor del formulario */
+.formulario {
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    border: 2px solid #ccc;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Ajustes para el contenedor de campos */
+.campo {
+    margin-bottom: 15px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.campo input, .campo textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+/* Estilo para el formulario centrado */
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    border-top: 2px solid #ccc;
+}
+
+.busqueda {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+.busqueda input {
+    padding: 4px;
+    border-radius: 6px;
+}
+
+.busqueda button {
+    padding: 4px;
+    border-radius: 6px;
+}
+
+footer {
+    background-color: #29034d;
+    color: white;
+    padding: 10px 0;
+    padding-bottom: 1px;
+    text-align: center;
+    margin-top: auto;
+}
+
+footer a {
+    color: #ffd700;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    margin: 10px 0;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+}
+
+/*---------------------------------------------------------------------------------------------------*/
+
